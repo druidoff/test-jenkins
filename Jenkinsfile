@@ -1,5 +1,10 @@
 pipeline {
-    agent { dockerfile true }
+    agent {
+        docker {
+            label "docker && linux"
+            image "python:3.7"
+        }
+    }
     stages {
         stage('Build') {
             steps {
