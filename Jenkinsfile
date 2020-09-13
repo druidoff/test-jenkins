@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -lah'
-                sh 'pip install -r requirements.txt'
+                sh 'pip install -r ./requirements.txt'
             }
         }
         stage('Migrations') {
