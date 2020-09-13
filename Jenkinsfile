@@ -3,13 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'pwd'
-                sh 'ls -lah'
+                 sh 'pwd'
+                 sh 'ls -lah'
+                 sh 'pip install -r requirements.txt'
             }
         }
         stage('Migrations') {
             steps {
-                sh 'python manage.py migrate'
+                 sh 'python manage.py migrate'
             }
         }
 
