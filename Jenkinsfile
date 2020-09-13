@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -lah'
-                sh 'pip insall -r requirements.txt'
+                sh 'pip intsall -r requirements.txt'
             }
         }
         stage('Migrations') {
