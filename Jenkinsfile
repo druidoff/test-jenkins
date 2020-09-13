@@ -1,14 +1,10 @@
 pipeline {
-    agent {docker {image 'python:3.7'} }
+    agent {docker {dockerfile true} }
     stages {
         stage('Build') {
             steps {
                 sh 'pwd'
                 sh 'ls -lah'
-                sh ''' 
-                   python -m venv env
-                   source ./env/bin/activate
-                   '''
                 sh 'pip install -r ./requirements.txt'
             }
         }
