@@ -9,5 +9,5 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Run the application:
-COPY myapp.py .
+COPY ./ .
 CMD ["python", "manage.py"]
