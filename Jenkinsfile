@@ -1,12 +1,19 @@
 pipeline {
     agent {docker {image 'python:3.7'} }
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
-                sh 'python --version'
+                sh 'pwd'
+                sh 'ls -lah'
+                sh 'pip insall -r requirements.txt'
             }
         }
+        stage('Migrations') {
+            steps {
+                sh 'python manage.py migrate'
+            }
+        }
+
     }
 }
 
